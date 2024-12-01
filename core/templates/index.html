@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Django 1 - Index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <h1>Index</h1>
+
+    <h2>{{ curso }}</h2>
+
+    <p> {{ outro }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Idade</th>
+                <th>CPF</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cuidador in cuidadores %}
+            <tr>
+                <td>{{ cuidador.nome }}</td>
+                <td>{{ cuidador.sobrenome }}</td>
+                <td>{{ cuidador.idade }}</td>
+                <td>{{ cuidador.cpf }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="teste();">Clique aqui</button>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
+</body>
+</html>
